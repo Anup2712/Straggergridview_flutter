@@ -1,0 +1,277 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:ofsdp/pages/home.dart';
+import 'package:ofsdp/util/appdrawer.dart';
+
+class AdministrativeUvit extends StatefulWidget {
+  @override
+  _AdministrativeUvitState createState() => _AdministrativeUvitState();
+}
+
+class _AdministrativeUvitState extends State<AdministrativeUvit> {
+  var _scaffoldkey = GlobalKey<ScaffoldState>();
+  List<StaggeredTile> _staggeredTiles = const <StaggeredTile>[
+    const StaggeredTile.count(1, 1),
+    const StaggeredTile.count(1, 1),
+    const StaggeredTile.count(1, 1),
+    const StaggeredTile.count(1, 1),
+    const StaggeredTile.count(1, 1.5),
+    const StaggeredTile.count(1, 1.5),
+  ];
+
+  List<Widget> _tiles = const <Widget>[
+  const _Example01Tile(Colors.green, Icons.widgets),
+  const _Example01Tile(Colors.lightBlue, Icons.wifi),
+  const _Example01Tile(Colors.amber, Icons.panorama_wide_angle),
+  const _Example01Tile(Colors.brown, Icons.map),
+  const _Example01Tile(Colors.deepOrange, Icons.send),
+  const _Example01Tile(Colors.indigo, Icons.airline_seat_flat),
+  const _Example01Tile(Colors.red, Icons.bluetooth),
+  const _Example01Tile(Colors.pink, Icons.battery_alert),
+  const _Example01Tile(Colors.purple, Icons.desktop_windows),
+  const _Example01Tile(Colors.blue, Icons.radio),
+];
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        Image.asset(
+          "assets/images/footer.jpg",
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          fit: BoxFit.cover,
+        ),
+        Scaffold(
+            backgroundColor: Colors.transparent,
+            appBar: AppBar(
+              backgroundColor: Color.fromRGBO(117, 80, 0, 1),
+              title: const Text("ADMINISTRATIVE UNIT"),
+              actions: <Widget>[
+                IconButton(
+                  icon: Icon(Icons.home),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => HomePage(),
+                      ),
+                    );
+                  },
+                )
+              ],
+            ),
+            drawer: AppDrawer(),
+            key: _scaffoldkey,
+            // body: CustomScrollView(
+            //   primary: false,
+            //   slivers: <Widget>[
+            //     SliverPadding(
+            //       padding: const EdgeInsets.all(20),
+            //       sliver: SliverGrid.count(
+            //         crossAxisSpacing: 10,
+            //         mainAxisSpacing: 10,
+            //         crossAxisCount: 2,
+            //         children: <Widget>[
+            //           //DMU
+            // Container(
+            //   decoration: new BoxDecoration(
+            //       color: Color.fromRGBO(1, 91, 39, 1),
+            //       borderRadius:
+            //           new BorderRadius.all(Radius.circular(20))),
+            //   padding: const EdgeInsets.all(8),
+            //   child: Column(
+            //     crossAxisAlignment: CrossAxisAlignment.center,
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     children: <Widget>[
+            //       Text(
+            //         "12",
+            //         style: TextStyle(
+            //             fontSize: 35,
+            //             fontWeight: FontWeight.bold,
+            //             color: Colors.white),
+            //       ),
+            //       Text("DMU",
+            //           style:
+            //               TextStyle(fontSize: 30, color: Colors.white))
+            //     ],
+            //   ),
+            // ),
+            //           //FMU
+            //           Container(
+            //             decoration: new BoxDecoration(
+            //                 color: Color.fromRGBO(1, 91, 39, 1),
+            //                 borderRadius:
+            //                     new BorderRadius.all(Radius.circular(20))),
+            //             padding: const EdgeInsets.all(8),
+            //             child: Column(
+            //               crossAxisAlignment: CrossAxisAlignment.center,
+            //               mainAxisAlignment: MainAxisAlignment.center,
+            //               children: <Widget>[
+            //                 Text(
+            //                   "32",
+            //                   style: TextStyle(
+            //                       fontSize: 35,
+            //                       fontWeight: FontWeight.bold,
+            //                       color: Colors.white),
+            //                 ),
+            //                 Text("FMU",
+            //                     style:
+            //                         TextStyle(fontSize: 30, color: Colors.white))
+            //               ],
+            //             ),
+            //           ),
+            //           //VSS
+            //           Container(
+            //             decoration: new BoxDecoration(
+            //                 color: Color.fromRGBO(1, 91, 39, 1),
+            //                 borderRadius:
+            //                     new BorderRadius.all(Radius.circular(20))),
+            //             padding: const EdgeInsets.all(8),
+            //             child: Column(
+            //               crossAxisAlignment: CrossAxisAlignment.center,
+            //               mainAxisAlignment: MainAxisAlignment.center,
+            //               children: <Widget>[
+            //                 Text(
+            //                   "745",
+            //                   style: TextStyle(
+            //                       fontSize: 35,
+            //                       fontWeight: FontWeight.bold,
+            //                       color: Colors.white),
+            //                 ),
+            //                 Text("VSS",
+            //                     style:
+            //                         TextStyle(fontSize: 30, color: Colors.white))
+            //               ],
+            //             ),
+            //           ),
+            //           //Total area
+            //           Container(
+            //             decoration: new BoxDecoration(
+            //                 color: Color.fromRGBO(1, 91, 39, 1),
+            //                 borderRadius:
+            //                     new BorderRadius.all(Radius.circular(20))),
+            //             padding: const EdgeInsets.all(8),
+            //             child: Column(
+            //               crossAxisAlignment: CrossAxisAlignment.center,
+            //               mainAxisAlignment: MainAxisAlignment.center,
+            //               children: <Widget>[
+            //                 Text(
+            //                   "70811",
+            //                   style: TextStyle(
+            //                       fontSize: 35,
+            //                       fontWeight: FontWeight.bold,
+            //                       color: Colors.white),
+            //                 ),
+            //                 Text("Total area",
+            //                     style:
+            //                         TextStyle(fontSize: 30, color: Colors.white))
+            //               ],
+            //             ),
+            //           ),
+            // Container(
+            //   height: 700,
+            //   decoration: new BoxDecoration(
+            //       color: Color.fromRGBO(1, 91, 39, 1),
+            //       borderRadius:
+            //           new BorderRadius.all(Radius.circular(20))),
+            //   padding: const EdgeInsets.all(8),
+            //   child: Column(
+            //     crossAxisAlignment: CrossAxisAlignment.center,
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     children: <Widget>[
+            //       Text(
+            //         "159147",
+            //         style: TextStyle(
+            //             fontSize: 35,
+            //             fontWeight: FontWeight.bold,
+            //             color: Colors.white),
+            //       ),
+            //       Text("GB Member",
+            //           style:
+            //               TextStyle(fontSize: 30, color: Colors.white)),
+            //       Divider(
+            //         color: Colors.green,
+            //       ),
+            //       Text(
+            //         "159147",
+            //         style: TextStyle(
+            //             fontSize: 35,
+            //             fontWeight: FontWeight.bold,
+            //             color: Colors.white),
+            //       ),
+            //       Text("GB Member",
+            //           style:
+            //               TextStyle(fontSize: 30, color: Colors.white)),
+            //     ],
+            //   ),
+            // ),
+            //           Container(
+            //             decoration: new BoxDecoration(
+            //                 color: Color.fromRGBO(1, 91, 39, 1),
+            //                 borderRadius:
+            //                     new BorderRadius.all(Radius.circular(20))),
+            //             padding: const EdgeInsets.all(8),
+            //             child: Column(
+            //               crossAxisAlignment: CrossAxisAlignment.center,
+            //               mainAxisAlignment: MainAxisAlignment.center,
+            //               children: <Widget>[
+            //                 Text(
+            //                   "744",
+            //                   style: TextStyle(
+            //                       fontSize: 35,
+            //                       fontWeight: FontWeight.bold,
+            //                       color: Colors.white),
+            //                 ),
+
+            //                 Text("VSS nBank A/c",
+            //                     style:
+            //                         TextStyle(fontSize: 30, color: Colors.white)),
+            //                 Divider(
+            //                   color: Colors.green,
+            //                 ),
+            //               ],
+            //             ),
+            //           ),
+            //         ],
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            body: new Padding(
+                padding: const EdgeInsets.only(top: 12.0),
+                child: new StaggeredGridView.count(
+                  crossAxisCount: 2,
+                  staggeredTiles: _staggeredTiles,
+                  children: _tiles,
+                  mainAxisSpacing: 4.0,
+                  crossAxisSpacing: 4.0,
+                  padding: const EdgeInsets.all(4.0),
+                )))
+      ],
+    );
+  }
+}
+class _Example01Tile extends StatelessWidget {
+  const _Example01Tile(this.backgroundColor, this.iconData);
+
+  final Color backgroundColor;
+  final IconData iconData;
+
+  @override
+  Widget build(BuildContext context) {
+    return new Card(
+      color: backgroundColor,
+      child: new InkWell(
+        onTap: () {},
+        child: new Center(
+          child: new Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: new Icon(
+              iconData,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
