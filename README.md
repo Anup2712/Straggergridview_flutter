@@ -1,6 +1,6 @@
 # # Staggered View
 # ScreenShot
-![alt text](https://raw.githubusercontent.com/Anup2712/flutterAnup/master/StaggeredView/Screenshot_2019-12-27-17-43-17-310_com.example.ofsdp.jpg)
+![alt text](https://github.com/Anup2712/flutterAnup/blob/master/StaggeredView/Screenshot.jpg)
 
 # What is it?
 A Flutter staggered grid view which supports multiple columns with rows of varying sizes.
@@ -9,7 +9,7 @@ You’ve probably came across some app or website design with staggered grid lay
 
 #For understand the code
 To help you to understand the code, you can see that this grid of 10 tiles is divided into 4 columns:
-![alt text](https://raw.githubusercontent.com/Anup2712/flutterAnup/master/StaggeredView/Screenshot_2019-12-27-17-43-17-310_com.example.ofsdp.jpg)
+![alt text](https://github.com/Anup2712/flutterAnup/blob/master/StaggeredView/understanding.png)
 
 
 # Let's Get Started
